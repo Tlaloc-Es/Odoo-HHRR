@@ -1,0 +1,14 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="id_isEmployee">
+            <field name="name">view.isEmployee</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="email" position="before">
+                    <field name="isEmployee" />
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
