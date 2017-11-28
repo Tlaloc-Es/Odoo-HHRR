@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'templates.xml',
+        'security/security.xml',
     ],
 
 }
