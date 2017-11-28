@@ -6,5 +6,17 @@
 			<field name="groups" eval="[(4, ref('base.group_user'))]"/>
 			<field name="domain_force">[('employeeID', '=', False)]</field>
 		</record>
+		<record model="ir.rule" id="employeeID_userRule">
+			<field name="name">Los officer de recursos humanos podran ver a los empleados en contactos</field>
+			<field name="model_id" ref="model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_hr_manager'))]"/>
+			<field name="domain_force">[('employeeID', '!=', False)]</field>
+		</record>
+		<record model="ir.rule" id="employeeID_userRule">
+			<field name="name">Los manager de recursos humanos podran ver a los empleados en contactos</field>
+			<field name="model_id" ref="model_res_partner"/>
+			<field name="groups" eval="[(4, ref('base.group_hr_user'))]"/>
+			<field name="domain_force">[('employeeID', '!=', False)]</field>
+		</record>
 	</data>
 </openerp>
